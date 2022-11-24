@@ -1,91 +1,85 @@
-<script setup>
-import { RouterLink, RouterView } from "vue-router";
-import HelloWorld from "./components/HelloWorld.vue";
-</script>
-
 <template>
-  <header>
-    <img
-      alt="Vue logo"
-      class="logo"
-      src="@/assets/logo.svg"
-      width="125"
-      height="125"
-    />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-      <nav>
-        <RouterLink to="/">Home</RouterLink>
-        <RouterLink to="/about">About</RouterLink>
-      </nav>
+    <div class="conteiner">
+        
+        <burgerVue/>
+        <div id="page-wrap">
+        <headerVue/>
+        
+       <div class="title">
+            <h1 class="title-text">Creating purpose-built brands & websites</h1>
+        </div>
+        </div>
+        
+        <div class="image-big-header">
+            <img class="img-head" src="./assets/IMAGE.png" width="100%" alt="Man look in window"/>
+        </div>
+        <div class="conteiner">
+        <contentVue/>
+        </div>
+        
+        <downVue/>
+        <div class="conteiner">
+            <div class="down-content">
+                    <p class="title-text" id="position-down-content">Seem like a good fit?</p>
+                    <a class="btn-all" href="@">Let's talk!</a>
+                </div>
+        </div>
+        <div class="conteiner">
+            <footerVue/>
+        </div>
     </div>
-  </header>
+      
 
-  <RouterView />
+
 </template>
-
-<style scoped>
-header {
-  line-height: 1.5;
-  max-height: 100vh;
+<script>
+import headerVue from "./components/header.vue";
+import burgerVue from './components/burger.vue';
+import footerVue from './components/footer.vue';
+import contentVue from './components/conten.vue';
+import downVue from "./components/down.vue";
+export default {
+    components: {
+        headerVue, burgerVue, footerVue, contentVue,downVue
+    }
+}
+</script>
+<style>
+*{
+padding: 0px;
+margin: 0px;
+}
+body{
+    background-color: #E5E5E5;
+}
+.conteiner {
+    margin: 0px 60px;
+    font-family: 'Poppins', 'san - serif';
 }
 
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
+.title-text {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 80px;
+    line-height: 100px;
+    color: #4B321D;
+
+}
+.title {
+    margin-top: 125px;
+}
+.image-big-header {
+    
+    margin: 130px 20px 80px 20px;
+    
+}
+.img-head {
+    width: 100%;
 }
 
-nav {
-  width: 100%;
-  font-size: 12px;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-nav a.router-link-exact-active {
-  color: var(--color-text);
-}
-
-nav a.router-link-exact-active:hover {
-  background-color: transparent;
-}
-
-nav a {
-  display: inline-block;
-  padding: 0 1rem;
-  border-left: 1px solid var(--color-border);
-}
-
-nav a:first-of-type {
-  border: 0;
-}
-
-@media (min-width: 1024px) {
-  header {
+.xyexye {
     display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
-
-  nav {
-    text-align: left;
-    margin-left: -1rem;
-    font-size: 1rem;
-
-    padding: 1rem 0;
-    margin-top: 1rem;
-  }
+    justify-content: space-between;
 }
+
 </style>
